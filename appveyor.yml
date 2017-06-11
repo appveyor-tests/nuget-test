@@ -1,63 +1,22 @@
-version: 2.0.{build}
+version: 3.0.{build}
 
-#image: Visual Studio 2015 - GCE
-#image: Visual Studio 2013
-
-#init:
-#- ps: Update-AppveyorBuild -Version "0.0.$env:appveyor_build_number-$($env:appveyor_repo_commit.substring(0,7))"
-
-#install:
-#- echo %appveyor_build_version%
-
-#xamarin:
-#  email:
-#    secure: u+5OC7iaTPjIYflqtV4AHZm8yK+PH7V8OrYhRZyc7D8=
-#  password:
-#    secure: KPaIpDJc143PUza6qBdpWQ==
-#  ios: true
-
-assembly_info: 
-  patch: true 
-  file: AssemblyInfo.* 
-  assembly_version: "{version}" 
-  assembly_file_version: "{version}" 
-  assembly_informational_version: "{version}"
+assembly_info:
+  patch: true
+  file: '**\AssemblyInfo.*'
+  assembly_version: '{version}'
+  assembly_file_version: '{version}'
+  assembly_informational_version: '{version}'
 
 build:
   publish_nuget: true
   publish_nuget_symbols: true
   include_nuget_references: true
+  verbosity: minimal
   
 test: off
 
-#deploy_script:
-#- nuget pack "C:\projects\nuget-test\MyNuGetLib\MyNuGetLib.csproj" -Properties "Configuration=Debug;Platform=AnyCPU" -IncludeReferencedProjects -OutputDirectory %appveyor_build_folder%
-#- ps: Get-ChildItem .\*.nupkg | % { Push-AppveyorArtifact $_.FullName -FileName "dup-$($_.Name)" }
-#- appveyor PushArtifact MyNuGetLib.sln
-#- appveyor PushArtifact MyNuGetLib.%appveyor_build_version%.nupkg -FileName dup-MyNuGetLib.%appveyor_build_version%.nupkg
-#- ps: Push-AppveyorArtifact "MyNuGetLib.$($env:appveyor_build_version).nupkg" -FileName "MyNuGetLib.$($env:appveyor_build_version).nupkg"
-
-#deploy:
-#- provider: NuGet
-#  symbol_server: https://ci.appveyor.com/nuget/appveyorsystems/api/v2/package
-#  server: https://www.myget.org/F/appveyor-test/api/v2/package
-#  api_key:
-#    secure: o+5HxqWE6l6x/XoEc45Ibzp7vAnbYf6ytmXnHcUUC+cvp9c8wzA/HA6mmYtrZGJS
-#  artifact: /.*\.symbols\.nupkg/
-#  skip_symbols: true
-
-#deploy:
-#- provider: NuGet
-#  api_key:
-#    secure: 5MUShxp5+kPsKeKnl2gHSniQOJQ5/B8REh4nH2LfTi7AwA1oUHulT1Apl9eR+hQs
-#- provider: NuGet
-#  api_key:
-#    secure: 5MUShxp5+kPsKeKnl2gHSniQOJQ5/B8REh4nH2LfTi7AwA1oUHulT1Apl9eR+hQs
-
-#notifications:
-#- provider: Slack
-#  incoming_webhook: https://hooks.slack.com/services/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11
-#  auth_token: ''
-#  on_build_success: false
-#  on_build_failure: false
-#  on_build_status_changed: true 
+deploy:
+- provider: NuGet
+  api_key:
+    secure: ZfrS0nUV9TSw0YypzdUzy253FQOg4ICgdAXrH0B83ofwHAysYIPGoV64WOQHsSa5
+  skip_symbols: true
