@@ -1,7 +1,7 @@
 version: 3.0.{build}
 
-#environment:
-#  APPVEYOR_USE_NUGET_EXE_FOR_PUBLISHING: true
+environment:
+  APPVEYOR_USE_NUGET_EXE_FOR_PUBLISHING: true
 
 assembly_info:
   patch: true
