@@ -1,5 +1,8 @@
 version: 3.0.{build}
 
+#environment:
+#  APPVEYOR_USE_NUGET_EXE_FOR_PUBLISHING: true
+
 assembly_info:
   patch: true
   file: '**\AssemblyInfo.*'
@@ -19,5 +22,5 @@ deploy:
 - provider: NuGet
   api_key:
     secure: ZfrS0nUV9TSw0YypzdUzy253FQOg4ICgdAXrH0B83ofwHAysYIPGoV64WOQHsSa5
-  skip_symbols: true
+#  skip_symbols: true
 
