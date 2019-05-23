@@ -21,7 +21,7 @@ test: off
 deploy:
 - provider: NuGet
   api_key:
-    secure: 684hBDJt8z3JkZjnaajrJDUQ2puPHKAHoC3vv1p0nQzzPLllLqNmnIud/08grE+N
+    secure: 5SIE4/3x2dcjxQy4PYbGLznXnUbalpTrey+eL0TqNKFHnWDyX9O/PuBfb0jaKYMz
 #  skip_symbols: true
 - provider: Environment
   name: nuget-appveyor
