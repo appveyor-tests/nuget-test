@@ -25,7 +25,8 @@ deploy:
 - provider: NuGet
   api_key:
     #secure: Uxsrwteqcn9ca834F9KD1RfoiA+s8Panrf4O/Zmp+x+8TrKnO8BgV57vTjn39Lkd
-    secure: MAi+JSqyaOcRBZZGBH40eGx9vRCs7pVSBcUTlOZVxdPWi2+o1htrG3F8dUG4Vwxh
+    #secure: MAi+JSqyaOcRBZZGBH40eGx9vRCs7pVSBcUTlOZVxdPWi2+o1htrG3F8dUG4Vwxh
+    secure: fW9AKokQDLnE5PQb71Fh35DwwB9NHA4LaUQF4F3l/NAkn+zeWg7QkACS9dpeMkru
   skip_symbols: true
 - provider: Environment
   name: nuget-appveyor
